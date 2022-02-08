@@ -19,11 +19,6 @@
 # product configuration (apps).
 #
 
-# Custom TWRP Versioning
-ifneq ($(wildcard device/common/version-info/.),)
-    CUSTOM_TWRP_DEVICE_VERSION := 2
-endif
-
 # Inherit from OEM SoC-common
 -include $(COMMON_PATH)/BoardConfigCommon.mk
 
@@ -34,3 +29,14 @@ TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/$(BOARD_KERNEL_IMAGE_NAME)
 
 # TWRP Flags
 TW_HAPTICS_TSPDRV := true
+
+#
+# For local builds only
+#
+# Custom TWRP Versioning
+ifneq ($(wildcard device/common/version-info/.),)
+    CUSTOM_TWRP_DEVICE_VERSION := 2
+endif
+#
+# end local build flags
+#
