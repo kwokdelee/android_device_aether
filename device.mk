@@ -29,3 +29,6 @@ PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*.ko,$(DEVICE_PATH)/prebuilt
 # Custom ROM asserts
 TARGET_OTA_ASSERT_DEVICE := I003D,ZS661KS
 
+# Prebuit files for recovery ramdisk
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,$(DEVICE_PATH)/prebuilt/recovery,$(TARGET_COPY_OUT_RECOVERY)/root)
