@@ -22,11 +22,6 @@
 # Inherit from OEM SoC-common
 -include $(COMMON_PATH)/BoardConfigCommon.mk
 
-# Prebuilts
-BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
-TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb.img
-TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/$(BOARD_KERNEL_IMAGE_NAME)
-
 # OTA asserts
 TARGET_OTA_ASSERT_DEVICE := ASUS_I003_1,I003D,obiwan
 
@@ -39,6 +34,7 @@ TW_HAPTICS_TSPDRV := true
 #
 # Custom TWRP Versioning
 ifneq ($(wildcard device/common/version-info/.),)
+    # device version is optional - the default value is "0" if nothing is set in device tree
     CUSTOM_TWRP_DEVICE_VERSION := 0
 endif
 #
