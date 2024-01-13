@@ -5,8 +5,10 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-LOCAL_PATH := $(call my-dir)
+PRODUCT_MAKEFILES := \
+    $(LOCAL_DIR)/omni_earth.mk
 
-ifeq ($(TARGET_DEVICE),earth)
-include $(call all-subdir-makefiles,$(LOCAL_PATH))
-endif
+COMMON_LUNCH_CHOICES := \
+    omni_earth-user \
+    omni_earth-userdebug \
+    omni_earth-eng
